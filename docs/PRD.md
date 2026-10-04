@@ -1,11 +1,11 @@
 # Product Requirements Document
 
-**Product:** Aali's Reader — AI Study Reader
+**Product:** Aali's Reader · اردو — AI Study Reader in English and Urdu
 **Platform:** Android 7.0 and above
 **Version covered:** 1.9 (hackathon build, with Urdu)
 **Author:** Aali · Team [placeholder]
-**Event:** Pak Angels Generative & Agentic AI Training, Cohort 11 — Hackathon
-**Date:** September 2026
+**Event:** Pak Angels Generative & Agentic AI Hackathon (Urdu edition)
+**Date:** October 2026
 **Status:** Working build, submitted for judging
 
 ---
@@ -266,8 +266,8 @@ definitions, offline Urdu OCR, right to left Nastaliq layout, and an Urdu voice 
 
 | Item | Link |
 | --- | --- |
-| Code | https://github.com/JH-Aali-7/aalis-reader |
-| Download and project page | https://jh-aali-7.github.io/aalis-reader/ |
-| APK download | https://github.com/JH-Aali-7/aalis-reader/raw/main/release/AaliReader-v1.9-arm64.apk |
+| Code | https://github.com/JH-Aali-7/aalis-reader-urdu |
+| Download and project page | https://jh-aali-7.github.io/aalis-reader-urdu/ |
+| APK download | https://github.com/JH-Aali-7/aalis-reader-urdu/releases/latest/download/AaliReader-arm64.apk |
 | Presentation slides | [add link] |
 | Presentation video | [add link] |

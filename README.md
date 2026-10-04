@@ -1,18 +1,19 @@
-# Aali's Reader — AI Study Reader
+# Aali's Reader · اردو — AI Study Reader in English and Urdu
 
 An offline first Android reading app for students. It opens PDF, EPUB, TXT, PowerPoint and Word files,
 lets you tap any word for an instant dictionary meaning in English **and Urdu**, reads the book aloud
 while highlighting the word being spoken, recognises English and **Urdu** text inside scanned pages
 without any internet, and can summarise a chapter with AI when you are online.
 
-Built for the **Pak Angels Generative & Agentic AI Hackathon (Cohort 11)**.
+Built for the **Pak Angels Generative & Agentic AI Hackathon**. This is the Urdu edition: everything
+the reader did in English it now also does in Urdu, offline.
 
 <p align="center">
-  <a href="https://github.com/JH-Aali-7/aalis-reader/raw/main/release/AaliReader-v1.9-arm64.apk">
+  <a href="https://github.com/JH-Aali-7/aalis-reader-urdu/releases/latest/download/AaliReader-arm64.apk">
     <b>Download the APK</b>
   </a>
   &nbsp;·&nbsp;
-  <a href="https://jh-aali-7.github.io/aalis-reader/">Project page</a>
+  <a href="https://jh-aali-7.github.io/aalis-reader-urdu/">Project page</a>
   &nbsp;·&nbsp;
   <a href="docs/PRD.md">PRD</a>
 </p>
@@ -172,22 +173,22 @@ against rendered Nastaliq text, and wrote the dictionary repair pass that fixes 
 
 ## Install
 
-1. Download **[AaliReader-v1.9-arm64.apk](https://github.com/JH-Aali-7/aalis-reader/raw/main/release/AaliReader-v1.9-arm64.apk)** (68 MB).
+1. Download **[AaliReader-v1.9-arm64.apk](https://github.com/JH-Aali-7/aalis-reader-urdu/releases/latest/download/AaliReader-arm64.apk)** (68 MB).
 2. On the phone, allow installing from unknown sources when asked.
 3. Open the app, grant storage access, then copy any book into `Aali Reader/Books` or import from the
    library screen.
 4. Optional: Settings → AI key, paste a free Google Gemini key from
    [aistudio.google.com](https://aistudio.google.com/app/apikey) to switch AI summaries on.
 
-If it refuses to install on an older 32 bit phone, use the [armv7 APK](https://github.com/JH-Aali-7/aalis-reader/raw/main/release/AaliReader-v1.9-armv7.apk) instead.
+If it refuses to install on an older 32 bit phone, use the [armv7 APK](https://github.com/JH-Aali-7/aalis-reader-urdu/releases/latest/download/AaliReader-armv7.apk) instead.
 5. For Urdu read aloud: Settings → Urdu → *Get the Urdu voice*, and download the Urdu voice once so it
    works offline.
 
 ## Build from source
 
 ```bash
-git clone https://github.com/JH-Aali-7/aalis-reader.git
-cd aalis-reader
+git clone https://github.com/JH-Aali-7/aalis-reader-urdu.git
+cd aalis-reader-urdu
 # point local.properties at your Android SDK, for example
 #   sdk.dir=C:\\Users\\you\\AppData\\Local\\Android\\Sdk
 ./gradlew assembleRelease
@@ -207,8 +208,22 @@ app/src/main/assets/fonts/                Noto Nastaliq Urdu and its licence
 app/src/main/assets/reader.js|.css        the reading engine injected into the WebView
 docs/PRD.md                               product requirements document
 docs/index.html                           project page published with GitHub Pages
-release/                                  signed APKs you can install directly
+.github/workflows/build-apk.yml           builds, tests, signs and publishes the APKs on every change
+keystore/ci-debug.keystore                public debug signing key used by the automatic build
 ```
+
+## Automatic builds
+
+Every change pushed to `main` is built on GitHub's own servers by
+[`.github/workflows/build-apk.yml`](.github/workflows/build-apk.yml): it compiles the app, runs the
+Urdu unit tests, signs the APKs and publishes them as the latest
+[Release](../../releases/latest). The download links above always point at that release, so they
+always serve the newest build.
+
+The automatic build signs with `keystore/ci-debug.keystore`, a public debug key kept in the repo so
+every build has the same signature. It is fine for testing and judging, not for the Play Store. A
+phone that has a copy built on another computer needs that copy uninstalled once before installing
+this one.
 
 ## Data and privacy
 
